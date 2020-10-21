@@ -12,6 +12,9 @@ class Fib extends Component {
     this.fetchValues();
     this.fetchIndexes();
   }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    this.renderSeenIndexes()
+  }
 
   async fetchValues() {
     const values = await axios.get('/api/values/current');
